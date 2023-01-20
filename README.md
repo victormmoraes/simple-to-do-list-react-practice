@@ -24,7 +24,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
   <img alt="Captura de tela da aplicação" src="src/assets/todo2.webp">
 </div>
 
-### 🛠 Tecnologias
+### 🛠 Tecnologias e recursos
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -32,6 +32,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [CSS Modules](https://github.com/css-modules/css-modules)
+
+Possui os seguintes recursos:
+
+- Adicionar uma nova tarefa
+- Excluir uma tarefa
+- Marcar a tarefa como concluída
 
 ### 🎲 Rodando o projeto
 
