@@ -1,0 +1,158 @@
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.info span {
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 17px;
+    display: flex;
+    gap: .5rem;
+}
+
+.info .created {
+    color: var(--blue-400);
+}
+
+.info .done {
+    color: var(--purple-500);
+}
+
+.info strong {
+    font-size: .875rem;
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+    line-height: .9375rem;
+    padding: .125rem .5rem;
+    border-radius: 999px;
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 1px solid var(--gray-400);
+    border-radius: .5rem;
+}
+
+.empty p {
+    color: var(--gray-300);
+    text-align: center;
+    line-height: 140%;
+}
+
+.empty img {
+    width: 3.5rem;
+    max-width: 100%;
+}
+
+.list {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    gap: .875rem;
+}
+
+.list .task {
+    display: flex;
+    padding: 1rem;
+    gap: .875rem;
+    background-color: var(--gray-500);
+    border: 1px solid var(--gray-400);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: .5rem;
+    align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+    transition: all .1s;
+}
+
+.list .task p {
+    color: var(--gray-100);
+    max-width: 90%;
+    line-height: 140%;
+    transition: text-decoration-line .1s;
+}
+
+.list .task input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.list .task .checkmark {
+    display: flex;
+    left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--blue-400);
+    background: transparent no-repeat center;
+}
+
+.list .task input:checked ~ p {
+    text-decoration-line: line-through;
+} 
+
+.list .task input:checked + .checkmark {
+    border-color: var(--purple-700);
+    background-color: var(--purple-700);
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 11px 8px;
+}
+
+.list:hover .task input ~ .checkmark {
+    background: rgba(30, 111, 159, 0.2);
+}
+
+.list:hover .task input:checked ~ .checkmark {
+    border-color: var(--purple-500);
+    background-color: var(--purple-500);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 11px 8px;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.list .task button {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 0;
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.list .task button svg {
+    color: var(--gray-300);
+}
+
+.list .task button:hover  {
+    background: var(--gray-400);
+    border-radius: 4px;
+}
+
+.list .task button:hover svg {
+    color: var(--danger);
+}
+
